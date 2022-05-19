@@ -14,26 +14,25 @@
     <div class="container">
         <div class="section flow-text" id="stuffDetails">
             <h1 class="blue-text text-darken-5">Bucket Details!</h1>
+            <a class="btn-small waves-effect waves-light blue" href="/inventory">Back to inventory</a> 
             <table>
                 <tr>
                     <th>Name:</th>
-                    <td>Ice Skating</td>
+                    <td><%= item %></td>
                 </tr>
                 <tr>
                     <th>Category:</th>
-                    <td>Adventure</td>
+                    <td><%= category %></td>
 
                 </tr>
                 <tr>
                     <th>Status:</th>
-                    <td>Completed</td>
+                    <td><%= status %></td>
 
                 </tr>
                 <tr>
                     <th>Description:</th>
-                    <td>
-                        Go ice skating with friends...try not to fall!
-                    </td>
+                    <td><%= description %></td>
                 </tr>
             </table>
         </div>
@@ -42,7 +41,7 @@
             <a class="btn-large waves-effect waves-light blue left modal-trigger" href="#stuffEdit">
                 <i class="material-icons right">edit</i>Edit
             </a>
-            <a class="btn-large waves-effect waves-light red right">
+            <a class="btn-large waves-effect waves-light red right" href="/inventory/bucket/<%= id %>/delete">
                 <i class="material-icons right">delete</i>Delete
             </a>
         </div>
@@ -53,7 +52,7 @@
             <div class="modal-content">
 
                 <h2 class="blue-text">Edit Bucket:</h2>
-                <form>
+                <form method="post" action="/inventory/bucket/<%= id%>">
                     <div class="row">
                         <div class="input-field col s6">
                             <label for="name">Name</label>
